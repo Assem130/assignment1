@@ -194,7 +194,7 @@
     img {
         float: left; /* Floats the image to the left */
         margin-right: 40px; /* Adds space between the image and the text */
-        margin-left: 20px;
+        margin-left: 40px;
         margin-bottom: 20px; /* Adds space at the bottom */
         width: 80%;
         height: 80%;
