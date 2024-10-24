@@ -1,0 +1,452 @@
+    /*import font */ 
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    /* Reset */
+    html, body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth; /* Smooth scrolling for internal links */
+    }
+    
+    /* General body styling */
+    body {
+        min-height: 100vh;
+        background: #F2F3F4;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        color: black;
+        padding: 0%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    
+    /* Header */
+    header.container {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #5DADE2;
+        margin: 0%;
+        padding: 20px 0 20px 40px ;
+        border-bottom: 2px solid #007BFF;
+        /*border-radius: 10px;*/
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Animation for fade-in effect */
+    
+    
+    
+    
+    
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    nav ul li {
+        margin: 0 10px;
+    }
+    
+    nav ul li a {
+        color: #000000;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    
+    }
+    nav > ul > li {
+        margin-left: 10px; /* Adds spacing between navigation items */
+    }
+    
+    
+    
+    header nav ul li a:hover {
+        background-color: #0056b3;
+        color: white;
+    }
+    header nav ul li a.active {
+        background-color: #0056b3;
+        color: white
+    }
+    
+    
+    /* Logo */
+    .logo {
+        width: 70px;
+        height: auto;
+    }
+    /* Hamburger Icon Style */
+.menu-icon {
+    display: none;  /* Hidden by default for larger screens */
+    font-size: 30px;
+    color: #F2F3F4;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 2000; /* Make sure the icon is above other elements */
+}
+
+/* Checkbox Style (Hide the checkbox itself) */
+.menu-toggle {
+    display: none;
+}
+
+/* Navigation Styles for Mobile */
+@media (max-width: 768px) {
+    /* Display the hamburger icon on smaller screens */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Hide the navigation off-screen by default */
+    nav#navbar {
+        position: fixed; /* Makes it float over the page */
+        top: 0;
+        right: -100%; /* Initially hide the navigation completely off-screen */
+        height: 100%;
+        width: 100%;
+        background: #5DADE2; /* Background color matches header */
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 10px 10px;
+        padding-top: 60px; /* Space for content */
+        transition: left 0.3s ease-in-out; /* Smooth sliding transition */
+        z-index: 1500; /* Ensure it's above main content */
+    }
+
+    nav#navbar ul {
+        flex-direction: column;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    nav#navbar ul li {
+        margin: 10px 0;
+    }
+
+    nav#navbar ul li a {
+        padding: 10px;
+        display: block;
+        color: #000000;
+        text-decoration: none;
+    }
+
+    /* When the checkbox is checked, show the menu */
+    .menu-toggle:checked + .menu-icon + #navbar {
+        right: 0; /* Bring it into the viewport */
+    }
+    .main-content {
+        max-width: 100%; /* Takes up full width of the screen */
+        width: 100%; /* Ensure full width on smaller screens */
+        margin: 20px 0; /* Adjusted margin to fit better on mobile screens */
+        padding: 20px; /* Adjusted padding for smaller screens */
+        flex-direction: column; /* Stack the content vertically */
+    }
+
+    .text-content {
+        max-width: 100%; /* Ensure full width of the text area on mobile */
+        padding-right: 0;
+    }
+
+    figure {
+        margin: 20px auto;
+        max-width: 100%; /* Ensure the image takes full width if needed */
+    }
+}
+
+    
+    /* Main content area styling */
+    .main-content {
+       
+        max-width: 800px; /* Limits the width of content for larger screens */
+        width: 95%; /* Full width up to the max-width value */
+         margin: 50px auto; /* Center the content horizontally */
+        padding: 30px; /* Padding for spacing inside the content */
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        animation: fadeIn 1s ease-out forwards;
+        animation-delay: 0.6s; /* Slight delay for the main content */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+       
+    }
+    
+    /* Text content */
+    .text-content {
+        order : 1;
+        flex: 1;
+        max-width: 80%;
+        padding-right: 20px;
+        text-align: left;
+        margin: 20px;
+        line-height: 1.5;
+        
+       
+    }
+    img {
+        float: left; /* Floats the image to the left */
+        margin-right: 40px; /* Adds space between the image and the text */
+        margin-left: 40px;
+        margin-bottom: 20px; /* Adds space at the bottom */
+        width: 80%;
+        height: 80%;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease; /* Add smooth scaling effect */
+    }
+    /* Styling for the list within the tips section */
+    .tips-list {
+        list-style-type: disc; /* Disc bullets */
+        padding-left: 20px; /* Indent bullets */
+        margin-bottom: 20px; /* Add some space at the bottom of the list */
+        line-height: 1.5; /* Increase line spacing for readability */
+        color: #333333; /* Ensure text color matches your site theme */
+    }
+    
+    /* Style for list items */
+    .tips-list li {
+        margin-bottom: 10px; /* Add space between list items */
+        font-size: 1.1em; /* Slightly increase the font size */
+        color: #333333;
+    }
+    
+    /* Strong emphasis within list items */
+    .tips-list li strong {
+        font-weight: 600; /* Medium-bold for emphasis */
+        color: #333333; /* Make bolded text slightly darker */
+    }
+    .tips-list section:nth-child(even) {
+        background-color: #FFF; /* Light cyan for even rows */
+    }
+    
+    .tips-list section:nth-child(odd) {
+        background-color: #FFF; /* White for odd rows */
+    }
+    
+    
+    figure {
+        order: 2;
+      
+        margin-left: 20px;
+        max-width: 300px;
+        flex-shrink: 0;
+    }
+    
+    figure img {
+        float: center;
+        margin-right: 20px;
+        margin-left: 0;
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease; /* Add smooth scaling effect */
+    }
+    
+    figure img:hover {
+        transform: scale(1.05); /* Slight zoom on hover */
+    }
+    
+    
+    h1, h2, h3 {
+        letter-spacing: 1px;
+        line-height: 1.8;
+        color: #333333;
+        font-family: 'poppins', sans-serif;
+        text-transform: uppercase; /* Makes the headings uppercase */
+    }
+    
+    h4 {
+        letter-spacing: 1px;
+        line-height: 1.8;
+        color: #333333;
+        font-family: 'poppins', sans-serif;
+        
+    }
+    p {
+        word-spacing: 2px;
+        margin-bottom: 20px;
+        color: #333333;
+        text-indent: 30px; /* Indents the first line of all paragraphs */
+
+    }
+    p::first-letter {
+        font-size: 1em;
+        color: #333333;
+       
+    }
+    
+    
+    
+    /* Links and Call to Action */
+    a.cta-button{
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #0056b3;
+        display: block;
+       
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    a.cta-button2{
+    
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #0056b3;
+       
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    
+    
+    }
+    
+    
+    a.cta-button:hover {
+        background-color: #F2F3F4; /* Hover state for CTA */
+        color: #0056b3;
+    }
+    a.cta-button2:hover {
+        background-color: #F2F3F4; /* Hover state for CTA */
+        color: #0056b3;
+    }
+    /* Call to action section */
+    #call-to-action {
+        text-align: center;
+        margin: 50px 0;
+        animation: fadeIn 1s ease-out forwards;
+        animation-delay: 0.9s; /* Delayed animation for the call-to-action */
+    }
+    /* Cookies Message Styling */
+    .cookies-message {
+        position: relative;
+        top: 2px;
+        bottom: 20px; /* Adds a small gap from the bottom of the screen */
+        left: 0;
+        right: 0; /* Centers the message */
+        width: 60%; /* Sets the width to 60% of the screen */
+        background-color: white;
+        color: white;
+        padding: 15px;
+        text-align: left; /* Aligns text to the left */
+        z-index: 9999;
+        box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.2); /* Modern shadow effect */
+        display: flex;
+        justify-content: space-between; /* Aligns button and text from left */
+        align-items: center; /* Aligns button and text vertically */
+        border-radius: 10px; /* Rounded corners */
+        margin: 0 auto; /* Centers the message horizontally */
+        transform: translateY(100%);
+        animation: slideIn 0.5s ease forwards; /* Slide-in animation */
+    }
+
+    .cookies-message p {
+        margin: 0;
+        padding-left: 20px; /* Adds space between the button and the text */
+        flex: 1; /* Ensures text takes up remaining space */
+    }
+
+    .cookies-message a {
+        color: #5DADE2;
+        text-decoration: underline;
+    }
+
+    .cookies-message a:hover {
+        color: #007BFF;
+    }
+
+    .cookies-dismiss {
+        background-color: #5DADE2;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .cookies-dismiss:hover {
+        background-color: #007BFF;
+    }
+
+    /* Hide the cookies message when checkbox is checked */
+    .cookies-checkbox {
+        display: none; /* Hides the checkbox */
+    }
+
+    .cookies-checkbox:checked ~ .cookies-message {
+        display: none;
+    }
+
+    /* Slide-in animation for the cookies message */
+    @keyframes slideIn {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+
+
+
+/* Slide-in animation for the cookies message */
+
+    
+    /* Footer */
+    footer {
+        background-color: #5DADE2;
+        text-align: center;
+        padding: 20px;
+        color: white;
+        border-top: 2px solid #007BFF;
+        margin-top: auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    footer p,
+    footer a,
+    footer span {
+        color: #000000 !important; /* Force white text for all footer content */
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .main-content {
+            flex-direction: column;
+            padding: 10px;
+        }
+    
+        .text-content {
+            max-width: 100%;
+            padding-right: 0;
+        }
+    
+        figure {
+            margin: 20px auto;
+            max-width: 100%;
+        }
+    
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        nav ul li {
+            margin-bottom: 10px;
+        }
+    }
+    
